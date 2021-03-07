@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+public class CameraFollowsPlayer : MonoBehaviour
 {
     // Code by Brackeys
     public Transform target;

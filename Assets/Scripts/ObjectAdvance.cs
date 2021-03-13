@@ -16,5 +16,6 @@ public class ObjectAdvance : MonoBehaviour
     void FixedUpdate()
     {
         this.GetComponent<Transform>().Translate(movement);
+
     }
 }

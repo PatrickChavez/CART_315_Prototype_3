@@ -6,22 +6,19 @@ using UnityEngine.UI;
 
 public class EnemyAttack : MonoBehaviour
 {
+    // Tutorials from WallaceT_MFM and antiquote 
     public GameObject player;
     public Text textComponent;
-    int health = 255;
     public float enemyDamage = 1f;
+    // Referencing the PlayerHealth script
+    public GameObject playerHealthScript;
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.gameObject == player)
         {
-            health = (int)(health - enemyDamage);
-            textComponent.text = "Health: " + health;
-
-            if (health <= 0)
-            {
-                SceneManager.LoadScene(0);
-            }
+            playerHealthScript.GetComponent<PlayerHealth>().currentHealth = playerHealthScript.GetComponent<PlayerHealth>().currentHealth - enemyDamage;
+            
         }
     }
 
@@ -34,6 +31,6 @@ public class EnemyAttack : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
+
     }
 }

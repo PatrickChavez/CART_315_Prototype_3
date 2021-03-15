@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MazeStart : MonoBehaviour
+public class GoalStart : MonoBehaviour
 {
-    public string mazestarttag;
+    public string goaltag;
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.gameObject.CompareTag(mazestarttag))
+        if (collision.collider.gameObject.CompareTag(goaltag))
         {
-            Debug.Log("Start!");
+            Debug.Log("Nice!");
             //Destroy(collision.collider.gameObject);
-            SceneManager.LoadScene("MazeCourse");
+            SceneManager.LoadScene("Ending");
         }
     }
 
@@ -24,7 +24,7 @@ public class MazeStart : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         
     }

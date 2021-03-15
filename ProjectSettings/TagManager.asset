@@ -6,6 +6,7 @@ TagManager:
   tags:
   - healthpickuptag
   - mazestart
+  - goalstart
   layers:
   - Default
   - TransparentFX

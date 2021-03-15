@@ -9,10 +9,8 @@ public class HealthPickup : MonoBehaviour
     public string healthpickuptag;
     public GameObject player;
     public Text textComponent;
-    //public float playerHealth;
     public float healthGain = 1f;
     // Referencing the PlayerHealth script
-    //public GameObject playerHealthScript;
     PlayerHealth playerHealthScript;
 
     private void OnCollisionEnter(Collision collision)

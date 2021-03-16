@@ -7,10 +7,13 @@ public class CollideReset : MonoBehaviour
 {
     public GameObject player;
 
+    private AudioSource deathSFX;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.gameObject == player)
         {
+            deathSFX.Play();
             Debug.Log("Collision detected");
             SceneManager.LoadScene(0);
         }
@@ -19,11 +22,11 @@ public class CollideReset : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        deathSFX = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
     }

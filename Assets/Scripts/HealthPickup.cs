@@ -12,6 +12,10 @@ public class HealthPickup : MonoBehaviour
     public float healthGain = 1f;
     // Referencing the PlayerHealth script
     PlayerHealth playerHealthScript;
+    // Audio code from Statement and levelzerozilch 
+    public AudioSource[] sounds;
+    public AudioSource warpSFX;
+    public AudioSource healSFX;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -19,7 +23,7 @@ public class HealthPickup : MonoBehaviour
         {
             //playerHealth = playerHealth + healthGain;
             GetComponent<PlayerHealth>().currentHealth = GetComponent<PlayerHealth>().currentHealth + healthGain;
-
+            healSFX.Play();
             Debug.Log("Life gain!");
             Destroy(collision.collider.gameObject);
         }
@@ -28,7 +32,9 @@ public class HealthPickup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        sounds = GetComponents<AudioSource>();
+        warpSFX = sounds[0];
+        healSFX = sounds[1];
     }
 
     // Update is called once per frame
